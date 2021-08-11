@@ -7,12 +7,12 @@ then
     sudo pacman -S --noconfirm python-nautilus
 elif type "apt-get" > /dev/null 2>&1
 then
-    installed=`apt list --installed python-nautilus -qq 2> /dev/null`
+    installed=`apt list --installed python3-nautilus -qq 2> /dev/null`
     if [ -z "$installed" ]
     then
-        sudo apt-get install -y python-nautilus
+        sudo apt-get install -y python3-nautilus
     else
-        echo "python-nautilus is already installed."
+        echo "python3-nautilus is already installed."
     fi
 elif type "dnf" > /dev/null 2>&1
 then
@@ -35,7 +35,7 @@ rm -f ~/.local/share/nautilus-python/extensions/code-nautilus.py
 
 # Download and install the extension
 echo "Downloading newest version..."
-wget --show-progress -q -O ~/.local/share/nautilus-python/extensions/code-nautilus.py https://raw.githubusercontent.com/cra0zy/code-nautilus/master/code-nautilus.py
+wget --show-progress -q -O ~/.local/share/nautilus-python/extensions/code-nautilus.py https://raw.githubusercontent.com/mrkeuz/code-nautilus/master/code-nautilus.py
 
 # Restart nautilus
 echo "Restarting nautilus..."
